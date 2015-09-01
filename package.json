@@ -1,12 +1,12 @@
 {
   "name": "forward-secrecy",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Javascript implementation of the Axolotl key-ratcheting protocol using the NaCl crypto library",
   "main": "dist/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --compilers js:babel/register",
     "build": "./node_modules/babel/bin/babel.js src/ --out-dir dist/",
-    "postinstall": "./node_modules/babel/bin/babel.js src/ --out-dir dist/"
+    "prepublish": "./node_modules/babel/bin/babel.js src/ --out-dir dist/"
   },
   "author": "",
   "license": "MIT",
