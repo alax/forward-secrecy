@@ -1,6 +1,6 @@
 {
   "name": "forward-secrecy",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Javascript implementation of the Axolotl key-ratcheting protocol using the NaCl crypto library",
   "main": "dist/index.js",
   "scripts": {
