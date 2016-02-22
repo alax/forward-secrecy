@@ -3,6 +3,7 @@
   "version": "1.0.2",
   "description": "Javascript implementation of the Axolotl key-ratcheting protocol using the NaCl crypto library",
   "main": "dist/index.js",
+  "jsnext:main": "src/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --compilers js:babel/register",
     "build": "./node_modules/babel/bin/babel.js src/ --out-dir dist/",
