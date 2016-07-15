@@ -532,7 +532,7 @@ export default class {
                         return resolve({ cleartext, outOfOrder: true })
                     }
 
-                    this._store(this.serialize())
+                    return this._store(this.serialize())
                         .then(() => resolve({
                             cleartext, outOfOrder: true
                         }))
