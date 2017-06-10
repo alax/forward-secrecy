@@ -21,7 +21,7 @@ export default class {
     _identityKeys
     _ratchetKeys
     _counters
-    _prevCounter 
+    _prevCounter
 
     // Determine if we are going to ratchet.
     _ratchet
@@ -33,11 +33,6 @@ export default class {
     _role
     _baseKeys
     _theirBaseKey
-
-
-
-
-
 
     constructor () {
         this._store = null
