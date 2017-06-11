@@ -13,6 +13,11 @@ export default class {
     * conversation receiver.
     */
     constructor () {
+        //console.log("constructor called")
+        //experimenting with migrating pbkdf2-sha256 to pbkdf2 to use sha512 - scheduled for future work. //bassel
+        //var derivedKey = pbkdf2.pbkdf2Sync('password', 'salt', 1, 32, 'sha512')
+        //console.log(derivedKey.toString('hex'))
+        
         // Storage function that is set later on.
         this._store = null
 
@@ -31,6 +36,8 @@ export default class {
         this._stagedSkippedMessageKeys = []
 
         // Am I Alice or Bob in this scenario?
+        // roles should be phased out for omemo and should be reduced to sender and reciever
+        // to enable a multi party session
         this._role = null
         this._baseKeys = null
         this._theirBaseKey = null
@@ -588,11 +595,7 @@ export default class {
                 * We are going to be on a new root thanks to this new key, so we
                 * need to calculate the new chain key and root key.
                 */
-                let newKeyMaterial = crypto.kdf(
-                    typedArray.toBuffer(
-                        crypto.dh(pRatchetRecv, this._ratchetKeys.priv)
-                    ), this._rootKey, 100, 64
-                )
+                let newKeyMaterial = crypto.kdf( typedArray.toBuffer(crypto.dh(pRatchetRecv, this._ratchetKeys.priv)), this._rootKey, 100, 64)
 
                 // Hold on to the new purported keys.
                 let pRootKey = newKeyMaterial.slice(0, 32)
