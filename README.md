@@ -16,6 +16,7 @@ Milestones
 **current:**
 ''' 
 8-10 june 2017:  forward-secrecy clones, built and tested 
+11 june 2017: reading axolotl/olm spec as well as further omemo protocol inspection to identify missing pieces
 '''
 **upcoming**
 ''' 
