@@ -56,6 +56,7 @@ describe('Session', () => {
     }
 
     const checkMessage = function (message) {
+//        console.log("the message is: " + message) //gives Object
         message.should.be.an.Object
         message.should.have.property('ephemeralKey')
         message.should.have.property('counter')
@@ -69,7 +70,8 @@ describe('Session', () => {
         let bSession = new Ratchet()
 
         aSession.storage((data, callback) => {
-            // console.log(data)
+            console.log("storage rep: ")
+            console.log(data)
             callback()
         })
 
@@ -101,6 +103,8 @@ describe('Session', () => {
         it('alice messages bob', () => {
             return aSession.encrypt('This is the first message!').then(result => {
                 checkMessage(result)
+                console.log("alice messages bob, line 105: ")
+                console.log(result)
                 aMsg[0] = result
             })
         })
@@ -182,7 +186,8 @@ describe('Session', () => {
         let bSession = new Ratchet()
 
         aSession.storage((data, callback) => {
-            // console.log(data)
+             console.log("alice, 187: ")
+             console.log(data)
             callback()
         })
 
